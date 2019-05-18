@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    stream:
+      default-binder: kafka
+      kafka:
+        binder:
+          brokers: sofa.open.alipay.net
+          zk-nodes: sofa.open.alipay.net
+      bindings:
+        testInPut:
+          destination: testKafka
+          content-type: application/json
+          default-binder: test
+  sleuth:
+    sampler:
+      probability: 1
+  zipkin:
+    base-url: http://sofa.cloud.alipay.net:9411
+server:
+  port: 8082
